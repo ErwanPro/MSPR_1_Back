@@ -1,0 +1,28 @@
+### get 
+POST http://localhost:3000/auth/signup HTTP/1.1
+content-type: application/json
+
+{
+    "email": "test@gmail.com",
+    "password": "test"
+}
+
+### post
+POST http://localhost:3000/auth/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "test@gmail.com",
+    "password": "test"
+}
+
+### post
+POST http://localhost:3000/coupon HTTP/1.1
+content-type: application/json
+
+{
+    "hash": "coupon 2"
+}
+
+### get
+GET http://localhost:3000/coupon HTTP/1.1

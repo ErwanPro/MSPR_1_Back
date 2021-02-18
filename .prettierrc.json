@@ -1,0 +1,7 @@
+{
+    "bracketSpacing": true,
+    "arrowParens": "avoid",
+    "useTabs": true,
+    "endOfLine": "lf",
+    "printWidth": 120
+}
