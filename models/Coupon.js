@@ -1,8 +1,9 @@
 import mongoose from 'mongoose';
 
 const couponSchema = mongoose.Schema({
-    title: {type: String, required: false},
-    hash: {type: String, required: true}
+    libelle: {type: String, required: true},
+    pourcentage: {type: String, required: true},
+    dateValidite: {type: String, required: true}
 });
 
 export default mongoose.model('Coupon', couponSchema);

@@ -21,8 +21,16 @@ POST http://localhost:3000/coupon HTTP/1.1
 content-type: application/json
 
 {
-    "hash": "coupon 2"
+    "libelle": "Chaussette en promo",
+    "pourcentage": "50",
+    "dateValidite": "30/03/2021"
 }
 
 ### get
 GET http://localhost:3000/coupon HTTP/1.1
+
+### get
+GET http://localhost:3000/coupon/603f4fee9688580620aa7d7c HTTP/1.1
+
+### get
+GET http://localhost:3000/ HTTP/1.1
