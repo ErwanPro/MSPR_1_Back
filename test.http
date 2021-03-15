@@ -30,7 +30,7 @@ content-type: application/json
 GET http://localhost:3000/coupon HTTP/1.1
 
 ### get
-GET http://localhost:3000/coupon/603f4fee9688580620aa7d7c HTTP/1.1
+GET http://localhost:3000/coupon/603f51e40f03e30fb0453f85 HTTP/1.1
 
 ### get
 GET http://localhost:3000/ HTTP/1.1
