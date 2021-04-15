@@ -1,0 +1,141 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API goStyle",
+    "version": "1.0.0",
+    "description": "Ceci est L'API de l'app goStyle"
+  },
+  "tags": [
+    {
+      "name": "coupon",
+      "description": "Operations sur les coupons"
+    }
+  ],
+  "paths": {
+    "/coupon": {
+      "post": {
+        "summary": "Ajoute un coupon",
+        "description": "",
+        "operationId": "postCoupon",
+        "requestBody": {
+          "description": "Un coupon",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "libelle": {
+                    "type": "string"
+                  },
+                  "pourcentage": {
+                    "type": "string"
+                  },
+                  "dateValidite": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Coupon créé !"
+          }
+        },
+        "tags": [
+          "coupon"
+        ]
+      },
+      "get": {
+        "summary": "Récupère tous les coupons",
+        "description": "Récupère L'ensemble des coupons de la base",
+        "operationId": "getAllCoupons",
+        "responses": {
+          "200": {
+            "description": "Operation reussi",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Coupon"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erreur inattendu"
+          }
+        },
+        "tags": [
+          "coupon"
+        ]
+      }
+    },
+    "/coupon/{id}": {
+      "get": {
+        "summary": "Recupere un coupon via son id",
+        "description": "",
+        "operationId": "getCouponByID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "L'ID en question",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation reussi",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Coupon"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erreur inattendu"
+          }
+        },
+        "tags": [
+          "coupon"
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Coupon": {
+        "type": "object",
+        "required": [
+          "libelle",
+          "pourcentage",
+          "dateValidite"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "libelle": {
+            "type": "string"
+          },
+          "pourcentage": {
+            "type": "string"
+          },
+          "dateValidite": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
