@@ -11,7 +11,7 @@ router.post('/', (req, res) => {
     });
     coupon.save()
         .then(() => res.status(201).json({ message: 'Coupon créé !' }))
-        .catch(error => res.status(400).json({ error: `${error} post coupon` }));
+        .catch(error => res.status(400).json({ error: `Erreur inattendu : post coupon` }));
 });
 
 router.get('/', (req, res) => {
@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
         .then((coupons) => {
             res.status(200).json(coupons)
         })
-        .catch(error => res.status(400).json({ error: `${error} get coupons` }));
+        .catch(error => res.status(400).json({ error: `Erreur inattendu : get coupons` }));
 });
 
 router.get('/:id', (req, res) => {
@@ -28,7 +28,7 @@ router.get('/:id', (req, res) => {
         .then((coupon) => {
             res.status(200).json(coupon)
         })
-        .catch(error => res.status(400).json({ error: `${error} get coupon` }));
+        .catch(error => res.status(400).json({ error: `Erreur inattendu : get coupon` }));
 });
 
 
