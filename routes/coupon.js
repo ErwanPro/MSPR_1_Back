@@ -10,7 +10,7 @@ router.post('/', (req, res) => {
         hash: req.body.hash
     });
     coupon.save()
-        .then(() => res.status(201).json({ message: 'Coupon créé !' }))
+        .then(savedCoupon => res.status(201).json(savedCoupon))
         .catch(error => res.status(400).json({ error: `${error} post coupon` }));
 });
 
